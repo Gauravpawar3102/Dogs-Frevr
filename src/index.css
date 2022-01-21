@@ -10,3 +10,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 } */
+.hero-right-container {
+  background: #0066ff;
+  color: white;
+}

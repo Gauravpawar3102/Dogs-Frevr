@@ -23,12 +23,12 @@ function Hero() {
             German Shepard
           </div>
         </div>
-        <div className="hero-right-container bg-purple-400 flex flex-col justify-center  grow  items-center   h-2/3 w-1/3">
+        <div className="hero-right-container py-2  flex flex-col justify-center  grow  items-center   h-4/5 w-1/3">
           <div className="hero-information h-full flex flex-col gap-6 justify-center p-4">
-            <div className="information font-mono text-4xl align-text-bottom place-self-center">
+            <div className="information font-mono font-medium text-4xl align-text-bottom place-self-center text-gray-900 bg-cyan-400 px-2">
               Information
             </div>
-            <div className="breedName text-2xl">{`Breed Name : German Shepard`}</div>
+            <div className="breedName text-2xl ">{`Breed Name : German Shepard`}</div>
             <div className="origin text-2xl">{`Origin : Germany`}</div>
             <div className="height text-2xl">{`Height :55cm-60cm`}</div>
             <div className="weight text-2xl">{`Weight :55kg-60kg`}</div>

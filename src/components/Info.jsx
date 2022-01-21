@@ -11,6 +11,10 @@ function Info() {
         <Infocard />
         <Infocard />
       </div>
+
+      <div className="info-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline">
+        More...
+      </div>
     </div>
   );
 }
