@@ -1,11 +1,12 @@
 import React from 'react';
-import heroimg from '../src/assets/hero-img.jpg';
+import heroimg from '../assets/hero-img.jpg';
+// import herobgimg from '../assets/hero-wave-png.png';
 function Hero() {
   return (
-    <div className="hero-breed h-screen">
-      <div className="hero-container h-full w-screen flex mt-4">
+    <div className="hero-breed ">
+      <div className="hero-container items-center  h-screen w-screen flex mt-4">
         <div
-          className="hero-left-container flex flex-col items-center  justify-center h-2/3 w-2/3 p-4
+          className="hero-left-container flex flex-col items-center  justify-center  h-2/3 w-2/3 p-4
       "
         >
           <div className="dod border-double border-4 border-sky-500 mb-4 font-semibold text-2xl py-2 px-4">
@@ -22,8 +23,8 @@ function Hero() {
             German Shepard
           </div>
         </div>
-        <div className="hero-right-container bg-purple-400 flex flex-col justify-center grow  items-center h-2/3 w-1/3">
-          <div className="hero-information h-full flex flex-col gap-6 justify-center">
+        <div className="hero-right-container bg-purple-400 flex flex-col justify-center  grow  items-center   h-2/3 w-1/3">
+          <div className="hero-information h-full flex flex-col gap-6 justify-center p-4">
             <div className="information font-mono text-4xl align-text-bottom place-self-center">
               Information
             </div>

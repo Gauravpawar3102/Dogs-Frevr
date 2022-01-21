@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero-container {
+  background-image: url('./assets/hero-wave-png.png');
+}
+/* .infoContainer {
+  background-image: url('./assets/blurry-gradient-haikei.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
