@@ -4,7 +4,7 @@ import heroimg from '../assets/hero-img.jpg';
 function Hero() {
   return (
     <div className="hero-breed ">
-      <div className="hero-container  items-center  h-screen w-screen flex mt-4">
+      <div className="hero-container bg-no-repeat bg-contain items-center  h-screen w-screen flex mt-4">
         <div
           className="hero-left-container  flex flex-col items-center  justify-center  h-2/3 w-2/3 p-4
       "

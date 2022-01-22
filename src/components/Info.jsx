@@ -1,5 +1,6 @@
 import React from 'react';
 import image from '../assets/hero-img.jpg';
+import { Link } from 'react-router-dom';
 function Info() {
   return (
     <div className="info-container">
@@ -12,9 +13,12 @@ function Info() {
         <Infocard />
       </div>
 
-      <div className="info-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline">
+      <Link
+        to="/"
+        className="info-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline"
+      >
         More...
-      </div>
+      </Link>
     </div>
   );
 }

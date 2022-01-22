@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function News() {
   return (
     <div className="news-container">
@@ -42,9 +42,12 @@ function News() {
         </div>
       </div>
 
-      <div className="info-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline">
+      <Link
+        to="/news"
+        className="news-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline"
+      >
         More...
-      </div>
+      </Link>
     </div>
   );
 }
