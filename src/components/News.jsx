@@ -31,7 +31,7 @@ function News() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate fugiat, aspernatur quisquam accusamus nisi sed
               consequuntur voluptas quod, cumque ullam amet sint! Pariatur
-              reprehenderit, accusamus iusto ?
+              reprehenderit, ?
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
