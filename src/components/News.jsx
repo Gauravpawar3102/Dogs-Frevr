@@ -30,7 +30,7 @@ function News() {
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Cupiditate fugiat, aspernatur quisquam accusamus nisi sed
-              consequuntur voluptas quod, cumque ullam amet sint! Pariatur ?
+              consequuntur voluptas quod, cumque ullam amet ?
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
