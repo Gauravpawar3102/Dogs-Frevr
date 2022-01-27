@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ActivityPage() {
-  return <div>Activity</div>;
+  return <div></div>;
 }
 
 export default ActivityPage;
