@@ -1,7 +1,7 @@
 import React from 'react';
 
 function InfoPage() {
-  return <div>infopages</div>;
+  return <div>infopage</div>;
 }
 
 export default InfoPage;
