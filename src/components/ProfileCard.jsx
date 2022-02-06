@@ -1,10 +1,12 @@
 import React from 'react';
 import profileImage from '../assets/hero-img.jpg';
+import { BiUpvote, BiHeart, BiMessageRounded } from 'react-icons/bi';
 function ProfileCard() {
   return (
-    <div className="Profile-container w-fit  border-4 border-sky-500">
+    <div className="Profile-container w-fit ">
       <img className="h-52 w-full object-cover " src={profileImage} alt="img" />
       <ProfileCardInfo />
+      <ProfileIcons />
     </div>
   );
 }
@@ -21,8 +23,14 @@ const ProfileCardInfo = () => {
   );
 };
 
-const profileIcons = () => {
-  return <div className="container"></div>;
+const ProfileIcons = () => {
+  return (
+    <div className="container h-8 text-2xl flex justify-around items-center bg-slate-300 w-full">
+      <BiHeart />
+      <BiMessageRounded />
+      <BiUpvote />
+    </div>
+  );
 };
 
 export default ProfileCard;
