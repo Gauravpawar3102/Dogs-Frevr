@@ -1,12 +1,47 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import heroimg from '../assets/hero-img.jpg';
+import Axios from 'axios';
 // import herobgimg from '../assets/hero-wave-png.png';
 function Hero() {
   const [bName, setBName] = useState('German shepard');
+  const [bImg, setBImg] = useState(
+    '"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Pointer_of_Ariege_from_1915.JPG/220px-Pointer_of_Ariege_from_1915.JPG"'
+  );
   const [origin, setOrigin] = useState('Germany');
   const [height, setHeight] = useState('55cm-60cm');
   const [weight, setWeight] = useState('56kg-65kg');
   const [coat, setCoat] = useState('Thick');
+
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://dog-breeds2.p.rapidapi.com/dog_breeds',
+      headers: {
+        'x-rapidapi-host': 'dog-breeds2.p.rapidapi.com',
+        'x-rapidapi-key': '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
+      },
+    };
+
+    Axios.request(options)
+      .then(function (response) {
+        console.log(response.data);
+        const random =
+          response.data[Math.floor(Math.random() * response.data.length)];
+        console.log(random);
+        setBName(random.breed);
+        setBImg(random.img);
+        setOrigin(random.origin);
+        setHeight(random.meta.height);
+        setWeight(random.meta.weight);
+        setCoat(random.meta.coat);
+
+        // setBName(random);
+        // console.log(response.data.map((breed, i) => breed));
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className="hero-breed ">
@@ -21,8 +56,8 @@ function Hero() {
 
           <img
             className=" h-2/3  w-2/3 grow object-scale-down"
-            src={heroimg}
-            alt="img"
+            src={bImg}
+            alt={heroimg}
           />
 
           <div className="hero-img-name text-4xl mt-4 tracking-widest font-mono">
