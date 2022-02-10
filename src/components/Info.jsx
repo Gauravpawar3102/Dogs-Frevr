@@ -1,5 +1,6 @@
 import image from '../assets/hero-img.jpg';
 import React, { useState } from 'react';
+import Axios from 'axios';
 
 import { Link } from 'react-router-dom';
 function Info() {
@@ -24,7 +25,8 @@ function Info() {
   );
 }
 const Infocard = () => {
-  const [bName, setBName] = useState('Germanshepar');
+  const [bName, setBName] = useState('Germanshepr');
+  const [bImg, setBImg] = useState('img');
   const [origin, setOrigin] = useState('Gemany');
   const [height, setHeight] = useState('55cm-60cm');
   const [weight, setWeight] = useState('56kg-65kg');
