@@ -26,7 +26,7 @@ function Info() {
 }
 const Infocard = () => {
   const [bName, setBName] = useState('German jshepr');
-  const [bImg, setBImg] = useState('img');
+  const [bImg, setbImg] = useState('img');
   const [origin, setOrigin] = useState('Gemany');
   const [height, setHeight] = useState('55cm-60cm');
   const [weight, setWeight] = useState('56kg-65kg');
