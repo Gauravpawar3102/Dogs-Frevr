@@ -35,7 +35,7 @@ const Infocard = () => {
       <div className="infoCard-container grow shadow-2xl  w-fit  ">
         <img
           className="info-img rounded-t-lg object-scale-down h-56 w-full"
-          src={image}
+          src={bImg}
           alt="Img"
         />
         <div className="infoCard-info flex flex-col items-center bg-red-200  capitalize gap-1 rounded-t-lg font-mono -translate-y-1 p-4">
