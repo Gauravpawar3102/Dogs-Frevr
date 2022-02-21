@@ -1,5 +1,4 @@
-import image from '../assets/hero-img.jpg';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Axios from 'axios';
 
 import { Link } from 'react-router-dom';
@@ -25,11 +24,13 @@ function Info() {
   );
 }
 const Infocard = () => {
-  const [bName, setBName] = useState('German jshepr');
+  const [bName, setBName] = useState('German shepard');
   const [bImg, setbImg] = useState('img');
-  const [origin, setOrigin] = useState('Geml;any');
+  const [origin, setOrigin] = useState('Germany');
   const [height, setHeight] = useState('55cm-60cm');
   const [weight, setWeight] = useState('56kg-65kg');
+
+ 
   return (
     <>
       <div className="infoCard-container grow shadow-2xl  w-fit  ">

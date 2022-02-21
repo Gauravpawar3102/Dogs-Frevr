@@ -4,9 +4,7 @@ import Axios from 'axios';
 // import herobgimg from '../assets/hero-wave-png.png';
 function Hero() {
   const [bName, setBName] = useState('German shepard');
-  const [bImg, setBImg] = useState(
-    '"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Pointer_of_Ariege_from_1915.JPG/220px-Pointer_of_Ariege_from_1915.JPG"'
-  );
+  const [bImg, setBImg] = useState('');
   const [origin, setOrigin] = useState('Germany');
   const [height, setHeight] = useState('55cm-60cm');
   const [weight, setWeight] = useState('56kg-65kg');
