@@ -21,10 +21,15 @@ function Hero() {
     };
 
     Axios.request(options)
-      .then(function (response) {
+      .then((response) => {
         console.log(response.data);
-        const random =
-          response.data[Math.floor(Math.random() * response.data.length)];
+        let randomData = Math.ceil(Math.random() * response.data.length);
+        console.log(randomData);
+        console.log(response.data.length);
+        const random = response.data[randomData - 1];
+        // const random =
+        // response.data[Math.floor(Math.random() * response.data.length - 1)];
+
         console.log(random);
         setBName(random.breed);
         setBImg(random.img);
@@ -32,7 +37,7 @@ function Hero() {
         setHeight(random.meta.height);
         setWeight(random.meta.weight);
         setCoat(random.meta.coat);
-
+        console.log('err');
         // setBName(random);
         // console.log(response.data.map((breed, i) => breed));
       })
