@@ -26,7 +26,7 @@ function Hero() {
         let randomData = Math.ceil(Math.random() * response.data.length);
         console.log(randomData);
         console.log(response.data.length);
-        const random = response.data[randomData - 1];
+        const random = response.data[1];
         // const random =
         // response.data[Math.floor(Math.random() * response.data.length - 1)];
 
