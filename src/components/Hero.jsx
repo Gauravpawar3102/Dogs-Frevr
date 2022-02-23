@@ -1,49 +1,70 @@
 import React, { useEffect, useState } from 'react';
-import heroimg from '../assets/hero-img.jpg';
+// import heroimg from '../assets/hero-img.jpg';
 import Axios from 'axios';
 // import herobgimg from '../assets/hero-wave-png.png';
 function Hero() {
-  const [bName, setBName] = useState('German shepard');
-  const [bImg, setBImg] = useState('');
-  const [origin, setOrigin] = useState('Germany');
-  const [height, setHeight] = useState('55cm-60cm');
-  const [weight, setWeight] = useState('56kg-65kg');
-  const [coat, setCoat] = useState('Thick');
+  const [bName, setBName] = useState([]);
+  const [bImg, setBImg] = useState([]);
+  const [origin, setOrigin] = useState([]);
+  const [height, setHeight] = useState('Not Availabele');
+  const [weight, setWeight] = useState('Not Availabele');
+  const [coat, setCoat] = useState([]);
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://dog-breeds2.p.rapidapi.com/dog_breeds',
-      headers: {
-        'x-rapidapi-host': 'dog-breeds2.p.rapidapi.com',
-        'x-rapidapi-key': '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
-      },
+    const asyncCall = async () => {
+      const options = {
+        method: 'GET',
+        url: 'https://dog-breeds2.p.rapidapi.com/dog_breeds',
+        headers: {
+          'x-rapidapi-host': 'dog-breeds2.p.rapidapi.com',
+          'x-rapidapi-key':
+            '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
+        },
+      };
+
+      Axios.request(await options)
+        .then((response) => {
+          console.log(response.data);
+          let randomData = Math.ceil(Math.random() * response.data.length);
+          console.log(randomData);
+          console.log(response.data.length);
+          const random = response.data[randomData - 2];
+          // const random =
+          // response.data[Math.floor(Math.random() * response.data.length )];
+
+          console.log(random.breed);
+          setBName(random.breed);
+          console.log(random.img);
+
+          setBImg(random.img);
+          console.log(random.origin);
+
+          setOrigin(random.origin);
+          if (setHeight == null || 'Not available') {
+            setHeight('Not Available');
+          } else {
+            console.log(random.meta.height);
+            setHeight(random.meta.height.dogs);
+          }
+          if (setWeight == null || 'Not available') {
+            setWeight('Not Available');
+          } else {
+            console.log(random.meta.weight);
+            setWeight(random.meta.weight.dogs);
+          }
+          console.log(random.meta.weight);
+          setWeight(random.meta.weight.dogs);
+
+          setCoat(random.meta.coat);
+          console.log('err');
+          // setBName(random);
+          // console.log(response.data.map((breed, i) => breed));
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
     };
-
-    Axios.request(options)
-      .then((response) => {
-        console.log(response.data);
-        let randomData = Math.ceil(Math.random() * response.data.length);
-        console.log(randomData);
-        console.log(response.data.length);
-        const random = response.data[1];
-        // const random =
-        // response.data[Math.floor(Math.random() * response.data.length - 1)];
-
-        console.log(random);
-        setBName(random.breed);
-        setBImg(random.img);
-        setOrigin(random.origin);
-        setHeight(random.meta.height);
-        setWeight(random.meta.weight);
-        setCoat(random.meta.coat);
-        console.log('err');
-        // setBName(random);
-        // console.log(response.data.map((breed, i) => breed));
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    asyncCall();
   }, []);
 
   return (
@@ -60,7 +81,7 @@ function Hero() {
           <img
             className=" h-2/3  w-2/3 grow object-scale-down"
             src={bImg}
-            alt={heroimg}
+            alt={'Not Available'}
           />
 
           <div className="hero-img-name text-4xl mt-4 tracking-widest font-mono">
