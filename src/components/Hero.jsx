@@ -9,6 +9,7 @@ function Hero() {
   const [height, setHeight] = useState('Not Available');
   const [weight, setWeight] = useState('Not Available');
   const [coat, setCoat] = useState([]);
+  const [reference, setReference] = useState([]);
 
   useEffect(() => {
     const asyncCall = async () => {
@@ -56,6 +57,7 @@ function Hero() {
           // setWeight(random.meta.weight.dogs);
 
           setCoat(random.meta.coat);
+          setReference(random.url);
           console.log('err');
           // setBName(random);
           // console.log(response.data.map((breed, i) => breed));
@@ -84,9 +86,12 @@ function Hero() {
             alt={'Not Available'}
           />
 
-          <div className="hero-img-name text-4xl mt-4 tracking-widest font-mono">
+          <a
+            href={reference}
+            className="hero-img-name text-4xl mt-4 tracking-widest font-mono"
+          >
             {bName}
-          </div>
+          </a>
         </div>
         <div className="hero-right-container py-2  flex flex-col justify-center  grow  items-center   h-4/5 w-1/3">
           <div className="hero-information h-full flex flex-col gap-6 justify-center p-4">
