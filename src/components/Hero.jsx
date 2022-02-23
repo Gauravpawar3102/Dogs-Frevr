@@ -6,8 +6,8 @@ function Hero() {
   const [bName, setBName] = useState([]);
   const [bImg, setBImg] = useState([]);
   const [origin, setOrigin] = useState([]);
-  const [height, setHeight] = useState('Not Availabele');
-  const [weight, setWeight] = useState('Not Availabele');
+  const [height, setHeight] = useState('Not Available');
+  const [weight, setWeight] = useState('Not Available');
   const [coat, setCoat] = useState([]);
 
   useEffect(() => {
@@ -52,8 +52,8 @@ function Hero() {
             console.log(random.meta.weight);
             setWeight(random.meta.weight.dogs);
           }
-          console.log(random.meta.weight);
-          setWeight(random.meta.weight.dogs);
+          // console.log(random.meta.weight);
+          // setWeight(random.meta.weight.dogs);
 
           setCoat(random.meta.coat);
           console.log('err');
