@@ -42,7 +42,7 @@ function Hero() {
 
           setOrigin(random.origin);
           if (setHeight == null || 'Not available') {
-            setHeight('Not Available');
+            setHeight('Not Available 🦄');
           } else {
             console.log(random.meta.height);
             setHeight(random.meta.height.dogs);
