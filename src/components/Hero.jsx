@@ -48,7 +48,7 @@ function Hero() {
             setHeight(random.meta.height.dogs);
           }
           if (setWeight == null || 'Not available') {
-            setWeight('Not Available');
+            setWeight('Not Available 🦄');
           } else {
             console.log(random.meta.weight);
             setWeight(random.meta.weight.dogs);
