@@ -41,7 +41,7 @@ function Hero() {
           console.log(random.origin);
 
           setOrigin(random.origin);
-          if (setHeight == null || 'Not available 🦄 ') {
+          if (setHeight == null || 'Not available 🦄  ') {
             setHeight('Not Available 🦄');
           } else {
             console.log(random.meta.height);
