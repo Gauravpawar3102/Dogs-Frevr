@@ -1,6 +1,32 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+
 function News() {
+  const [newstext, setNewsText] = useState('afs');
+  const [nImg, setnImg] = useState('Image');
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      url: 'https://daily-dog-news.p.rapidapi.com/news/ap',
+      headers: {
+        'x-rapidapi-host': 'daily-dog-news.p.rapidapi.com',
+        'x-rapidapi-key': '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function (response) {
+        let randomData = Math.ceil(Math.random() * response.data.length);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+
+    return () => {};
+  }, []);
+
   return (
     <div className="news-container">
       <div className="news-text text-4xl capitalize font-mono font-semibold ml-8  flex justify-center  tracking-widest">
@@ -11,15 +37,12 @@ function News() {
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+              src={nImg}
               alt="img"
             />
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-left scrollbar-hide  ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate fugiat, aspernatur quisquam accusamus nisi sed
-              consequuntur voluptas quod, cumque ullam amet sint! Pariatur
-              reprehenderit, accusamus iusto error nesciunt laboriosam esse?
+              {newstext}
             </p>
           </div>
         </div>
@@ -28,13 +51,11 @@ function News() {
         <div className="box1 col-span-2 h-full grow border-double border-4 border-sky-500 rounded-lg  shadow-lg shadow-indigo-500/50 ">
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate fugiat, aspernatur quisquam accusamus nisi sed
-              consequuntur voluptas quod, cumque ullam amet ?
+              {newstext}
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+              src={nImg}
               alt="img"
             />
           </div>
