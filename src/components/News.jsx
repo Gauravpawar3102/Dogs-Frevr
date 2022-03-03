@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 function News() {
-  const [newstext, setNewsText] = useState('afs');
-  const [nImg, setnImg] = useState('Image');
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -17,7 +15,6 @@ function News() {
     axios
       .request(options)
       .then(function (response) {
-        let randomData = Math.ceil(Math.random() * response.data.length);
         console.log(response.data);
       })
       .catch(function (error) {
