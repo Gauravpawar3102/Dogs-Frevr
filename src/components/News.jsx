@@ -2,28 +2,6 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 
 function News() {
-  useEffect(() => {
-    const options = {
-      method: 'GET',
-      url: 'https://daily-dog-news.p.rapidapi.com/news/ap',
-      headers: {
-        'x-rapidapi-host': 'daily-dog-news.p.rapidapi.com',
-        'x-rapidapi-key': '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
-      },
-    };
-
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-
-    return () => {};
-  }, []);
-
   return (
     <div className="news-container">
       <div className="news-text text-4xl capitalize font-mono font-semibold ml-8  flex justify-center  tracking-widest">
@@ -34,12 +12,12 @@ function News() {
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src={nImg}
+              src="img"
               alt="img"
             />
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-left scrollbar-hide  ">
-              {newstext}
+              kghjlhkhj
             </p>
           </div>
         </div>
@@ -48,11 +26,11 @@ function News() {
         <div className="box1 col-span-2 h-full grow border-double border-4 border-sky-500 rounded-lg  shadow-lg shadow-indigo-500/50 ">
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
-              {newstext}
+              ;lkjlkjk
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src={nImg}
+              src="img"
               alt="img"
             />
           </div>
