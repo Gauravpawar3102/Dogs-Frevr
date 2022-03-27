@@ -12,12 +12,16 @@ function News() {
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src="img"
+              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
               alt="img"
             />
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-left scrollbar-hide  ">
-              kghjlhkhj
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
+              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
+              cum, tempora aut rem beatae cupiditate.
             </p>
           </div>
         </div>
@@ -26,11 +30,15 @@ function News() {
         <div className="box1 col-span-2 h-full grow border-double border-4 border-sky-500 rounded-lg  shadow-lg shadow-indigo-500/50 ">
           <div className="flex  w-full items-center justify-center gap-2 h-full">
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
-              ;lkjlkjk
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
+              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
+              cum, tempora aut rem beatae cupiditate.
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
-              src="img"
+              src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bWFufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"
               alt="img"
             />
           </div>
