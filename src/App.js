@@ -81,6 +81,23 @@ function App() {
     asyncCall();
   }, []);
 
+  const options2 = {
+    method: 'GET',
+    url: 'https://daily-dog-news.p.rapidapi.com/news/ap',
+    headers: {
+      'X-RapidAPI-Host': 'daily-dog-news.p.rapidapi.com',
+      'X-RapidAPI-Key': '2b66cc80femshb1df0e1e9c92c59p13ac85jsnfbf1187edcae',
+    },
+  };
+
+  Axios.request(options2)
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+
   return (
     <>
       <Router>
