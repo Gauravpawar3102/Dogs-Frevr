@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
 
-function News() {
+function News({ newss, setNewss }) {
   return (
     <div className="news-container">
       <div className="news-text text-4xl capitalize font-mono font-semibold ml-8  flex justify-center  tracking-widest">
@@ -17,24 +16,19 @@ function News() {
             />
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-left scrollbar-hide  ">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
-              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
-              cum, tempora aut rem beatae cupiditate.
+              {newss[1].title}
             </p>
+            <div className="source   h-full  self-end">~{newss[1].source}</div>
           </div>
         </div>
         <div className="box2 bg-transparent"></div>
         <div className="box3 bg-transparent"></div>
         <div className="box1 col-span-2 h-full grow border-double border-4 border-sky-500 rounded-lg  shadow-lg shadow-indigo-500/50 ">
           <div className="flex  w-full items-center justify-center gap-2 h-full">
+            <div className="source">~{newss[0].source}</div>
+
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
-              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
-              cum, tempora aut rem beatae cupiditate.
+              {newss[0].title}
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"
@@ -54,5 +48,4 @@ function News() {
     </div>
   );
 }
-
 export default News;

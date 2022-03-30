@@ -19,9 +19,17 @@ function App() {
   const [bImg, setBImg] = useState([]);
   const [origin, setOrigin] = useState([]);
   const [height, setHeight] = useState('Not Available 🦄');
-  const [weight, setWeight] = useState('Not Available');
+  const [weight, setWeight] = useState('Not Available 🦄');
   const [coat, setCoat] = useState([]);
   const [reference, setReference] = useState([]);
+
+  const [newss, setNewss] = useState([]);
+
+  useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
+              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
+              cum, tempora aut rem beatae cupiditate.`);
 
   useEffect(() => {
     const asyncCall = async () => {
@@ -80,24 +88,25 @@ function App() {
     };
     asyncCall();
   }, []);
+  useEffect(() => {
+    const options2 = {
+      method: 'GET',
+      url: 'https://daily-dog-news.p.rapidapi.com/news/ap',
+      headers: {
+        'X-RapidAPI-Host': 'daily-dog-news.p.rapidapi.com',
+        'X-RapidAPI-Key': '2b66cc80femshb1df0e1e9c92c59p13ac85jsnfbf1187edcae',
+      },
+    };
 
-  const options2 = {
-    method: 'GET',
-    url: 'https://daily-dog-news.p.rapidapi.com/news/ap',
-    headers: {
-      'X-RapidAPI-Host': 'daily-dog-news.p.rapidapi.com',
-      'X-RapidAPI-Key': '2b66cc80femshb1df0e1e9c92c59p13ac85jsnfbf1187edcae',
-    },
-  };
-
-  Axios.request(options2)
-    .then(function (response) {
-      console.log(response.data);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
-
+    Axios.request(options2)
+      .then(function (response) {
+        console.log(response.data);
+        setNewss(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
   return (
     <>
       <Router>
@@ -126,7 +135,7 @@ function App() {
                   Weight={weight}
                   Coat={coat}
                 />
-                <News />
+                <News newss={newss} setNewss={setNewss} />
               </div>
             }
           />
