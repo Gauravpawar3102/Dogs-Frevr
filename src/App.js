@@ -23,13 +23,13 @@ function App() {
   const [coat, setCoat] = useState([]);
   const [reference, setReference] = useState([]);
 
-  const [newss, setNewss] = useState([]);
-
-  useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+  const [newss, setNewss] =
+    useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
               repudiandae quae suscipit nobis deserunt cum, tempora aut rem
               beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
               adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
               cum, tempora aut rem beatae cupiditate.`);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const asyncCall = async () => {
@@ -102,11 +102,15 @@ function App() {
       .then(function (response) {
         console.log(response.data);
         setNewss(response.data);
+        setLoading(false);
       })
       .catch(function (error) {
-        console.error(error);
+        console.error(error.message);
       });
   }, []);
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
   return (
     <>
       <Router>
