@@ -1,36 +1,36 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-function Info({ Name, Image, Origin, Height, Weight, Coat }) {
+function Info({ random1, random2, random3 }) {
   return (
-    <div className="info-container">
+    <div className="info-container ">
       <div className="infoText ml-8  text-4xl font-mono font-semibold">
         Know Your Dog
       </div>
-      <div className="infoContainer flex  gap-8 p-4 justify-around">
+      <div className="infoContainer flex  gap-8 p-4 justify-around overflow-x-scroll">
         <Infocard
-          Name={Name}
-          Image={Image}
-          Origin={Origin}
-          Height={Height}
-          Weight={Weight}
-          Coat={Coat}
+          Name={random1.breed}
+          Image={random1.img}
+          Origin={random1.origin}
+          // Height={random1.meta.height.dogs}
+          // Weight={random1.meta.weight.dogs}
+          // Coat={random1.meta.Coat}
         />
         <Infocard
-          Name={Name}
-          Image={Image}
-          Origin={Origin}
-          Height={Height}
-          Weight={Weight}
-          Coat={Coat}
+          Name={random2.breed}
+          Image={random2.img}
+          Origin={random2.origin}
+          // Height={random2.meta.height.dogs}
+          // Weight={random2.meta.weight.dogs}
+          // Coat={random2.meta.Coat}
         />
         <Infocard
-          Name={Name}
-          Image={Image}
-          Origin={Origin}
-          Height={Height}
-          Weight={Weight}
-          Coat={Coat}
+          Name={random3.breed}
+          Image={random3.img}
+          Origin={random3.origin}
+          // Height={random3.meta.height.dogs}
+          // Weight={random3.meta.weight.dogs}
+          // Coat={random3.meta.Coat}
         />
       </div>
 

@@ -21,6 +21,9 @@ function App() {
   const [height, setHeight] = useState('Not Available 🦄');
   const [weight, setWeight] = useState('Not Available 🦄');
   const [coat, setCoat] = useState([]);
+  const [random1, setrandom1] = useState([]);
+  const [random2, setrandom2] = useState([]);
+  const [random3, setrandom3] = useState([]);
   const [reference, setReference] = useState([]);
 
   const [newss, setNewss] =
@@ -29,7 +32,6 @@ function App() {
               beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
               adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
               cum, tempora aut rem beatae cupiditate.`);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const asyncCall = async () => {
@@ -50,24 +52,31 @@ function App() {
           console.log(randomData);
           console.log(response.data.length);
           const random = response.data[randomData - 2];
+          const random1 = response.data[randomData - 3];
+          const random2 = response.data[randomData - 4];
+          const random3 = response.data[randomData - 5];
           // const random =
           // response.data[Math.floor(Math.random() * response.data.length )];
 
-          console.log(random.breed);
+          console.log(random1.breed);
           setBName(random.breed);
+          setrandom1(random1);
+          setrandom2(random2);
+          setrandom3(random3);
+
           console.log(random.img);
 
           setBImg(random.img);
           console.log(random.origin);
 
           setOrigin(random.origin);
-          if (setHeight == null || 'Not available 🦄  ') {
+          if (setHeight == null || 'Not available   ') {
             setHeight('Not Available 🦄');
           } else {
             console.log(random.meta.height);
             setHeight(random.meta.height.dogs);
           }
-          if (setWeight == null || 'Not available🦄') {
+          if (setWeight == null || 'Not available') {
             setWeight('Not Available 🦄');
           } else {
             console.log(random.meta.weight);
@@ -102,15 +111,12 @@ function App() {
       .then(function (response) {
         console.log(response.data);
         setNewss(response.data);
-        setLoading(false);
       })
       .catch(function (error) {
         console.error(error.message);
       });
   }, []);
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
+
   return (
     <>
       <Router>
@@ -131,14 +137,7 @@ function App() {
                   Weight={weight}
                   Coat={coat}
                 />
-                <Info
-                  Name={bName}
-                  Image={bImg}
-                  Origin={origin}
-                  Height={height}
-                  Weight={weight}
-                  Coat={coat}
-                />
+                <Info random1={random1} random2={random2} random3={random3} />
                 <News newss={newss} setNewss={setNewss} />
               </div>
             }
