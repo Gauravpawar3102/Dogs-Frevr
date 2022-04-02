@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from '../assets/hero-img.jpg';
+// import profileImage from '../assets/hero-img.jpg';
 import { BiUpvote, BiHeart, BiMessageRounded } from 'react-icons/bi';
 function ProfileCard({ data }) {
   return (

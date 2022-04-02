@@ -1,11 +1,11 @@
-import React, { Children } from 'react';
+import React from 'react';
 import { BiUpvote, BiHeart, BiMessageRounded } from 'react-icons/bi';
 
-import ProfileCard from '../components/ProfileCard';
-import '../assets/hero-img.jpg';
-import { logRoles } from '@testing-library/react';
-import { info } from 'autoprefixer';
-function InfoPage({ data, children }) {
+// import ProfileCard from '../components/ProfileCard';
+// import '../assets/hero-img.jpg';
+// import { logRoles } from '@testing-library/react';
+// import { info } from 'autoprefixer';
+function InfoPage({ data }) {
   return (
     <div className="h-full w-screen flex flex-wrap gap-4 p-4">
       {data.map((card) => {
