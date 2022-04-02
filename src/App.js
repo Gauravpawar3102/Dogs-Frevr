@@ -25,6 +25,7 @@ function App() {
   const [random2, setrandom2] = useState([]);
   const [random3, setrandom3] = useState([]);
   const [reference, setReference] = useState([]);
+  const [infoData, setInfoData] = useState([]);
 
   const [newss, setNewss] =
     useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
@@ -34,68 +35,69 @@ function App() {
               cum, tempora aut rem beatae cupiditate.`);
 
   useEffect(() => {
-    const asyncCall = async () => {
-      const options = {
-        method: 'GET',
-        url: 'https://dog-breeds2.p.rapidapi.com/dog_breeds',
-        headers: {
-          'x-rapidapi-host': 'dog-breeds2.p.rapidapi.com',
-          'x-rapidapi-key':
-            '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
-        },
-      };
-
-      Axios.request(await options)
-        .then((response) => {
-          console.log(response.data);
-          let randomData = Math.ceil(Math.random() * response.data.length);
-          console.log(randomData);
-          console.log(response.data.length);
-          const random = response.data[randomData - 2];
-          const random1 = response.data[randomData - 3];
-          const random2 = response.data[randomData - 4];
-          const random3 = response.data[randomData - 5];
-          // const random =
-          // response.data[Math.floor(Math.random() * response.data.length )];
-
-          console.log(random1.breed);
-          setBName(random.breed);
-          setrandom1(random1);
-          setrandom2(random2);
-          setrandom3(random3);
-
-          console.log(random.img);
-
-          setBImg(random.img);
-          console.log(random.origin);
-
-          setOrigin(random.origin);
-          if (setHeight == null || 'Not available   ') {
-            setHeight('Not Available 🦄');
-          } else {
-            console.log(random.meta.height);
-            setHeight(random.meta.height.dogs);
-          }
-          if (setWeight == null || 'Not available') {
-            setWeight('Not Available 🦄');
-          } else {
-            console.log(random.meta.weight);
-            setWeight(random.meta.weight.dogs);
-          }
-          // console.log(random.meta.weight);
-          // setWeight(random.meta.weight.dogs);
-
-          setCoat(random.meta.coat);
-          setReference(random.url);
-          // console.log('err');
-          // setBName(random);
-          // console.log(response.data.map((breed, i) => breed));
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+    // const asyncCall = async () => {
+    const options = {
+      method: 'GET',
+      url: 'https://dog-breeds2.p.rapidapi.com/dog_breeds',
+      headers: {
+        'x-rapidapi-host': 'dog-breeds2.p.rapidapi.com',
+        'x-rapidapi-key': '75bc0c04d9mshad42a5402de3ceap123ca2jsn0eba70fbcded',
+      },
     };
-    asyncCall();
+
+    Axios.request(options)
+      .then((response) => {
+        console.log(response.data);
+
+        let randomData = Math.ceil(Math.random() * response.data.length);
+        console.log(randomData);
+        console.log(response.data.length);
+        const random = response.data[randomData - 2];
+        const random1 = response.data[randomData - 3];
+        const random2 = response.data[randomData - 4];
+        const random3 = response.data[randomData - 5];
+        const infoPageData = response.data;
+
+        // const random =
+        // response.data[Math.floor(Math.random() * response.data.length )];
+
+        console.log(random1.breed);
+        setBName(random.breed);
+        setrandom1(random1);
+        setrandom2(random2);
+        setrandom3(random3);
+        setInfoData(infoPageData);
+
+        setBImg(random.img);
+        console.log(random.origin);
+
+        setOrigin(random.origin);
+        if (setHeight == null || 'Not available   ') {
+          setHeight('Not Available 🦄');
+        } else {
+          console.log(random.meta.height);
+          setHeight(random.meta.height.dogs);
+        }
+        if (setWeight == null || 'Not available') {
+          setWeight('Not Available 🦄');
+        } else {
+          console.log(random.meta.weight);
+          setWeight(random.meta.weight.dogs);
+        }
+        // console.log(random.meta.weight);
+        // setWeight(random.meta.weight.dogs);
+
+        setCoat(random.meta.coat);
+        setReference(random.url);
+        // console.log('err');
+        // setBName(random);
+        // console.log(response.data.map((breed, i) => breed));
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    // };
+    // asyncCall();
   }, []);
   useEffect(() => {
     const options2 = {
@@ -116,7 +118,6 @@ function App() {
         console.error(error.message);
       });
   }, []);
-
   return (
     <>
       <Router>
@@ -144,7 +145,8 @@ function App() {
           />
           <Route path="/activity" element={<ActivityPage />} />
           <Route path="/breeds" element={<BreedsPage />} />
-          <Route path="/info" element={<InfoPage />} />
+          <Route path="/info" element={<InfoPage data={infoData} />} />
+
           <Route path="/news" element={<NewsPage />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<ErrorPage />} />
