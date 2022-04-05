@@ -27,12 +27,7 @@ function App() {
   const [reference, setReference] = useState([]);
   const [infoData, setInfoData] = useState([]);
 
-  const [newss, setNewss] =
-    useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
-              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
-              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
-              cum, tempora aut rem beatae cupiditate.`);
+  const [newss, setNewss] = useState([]);
 
   useEffect(() => {
     // const asyncCall = async () => {
@@ -139,7 +134,7 @@ function App() {
                   Coat={coat}
                 />
                 <Info random1={random1} random2={random2} random3={random3} />
-                <News newss={newss} setNewss={setNewss} />
+                <News data={newss} setNewss={setNewss} />
               </div>
             }
           />
@@ -147,7 +142,7 @@ function App() {
           <Route path="/breeds" element={<BreedsPage />} />
           <Route path="/info" element={<InfoPage data={infoData} />} />
 
-          <Route path="/news" element={<NewsPage />} />
+          <Route path="/news" element={<NewsPage data={newss} />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
