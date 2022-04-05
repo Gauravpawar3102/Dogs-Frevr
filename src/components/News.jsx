@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function News({ newss, setNewss }) {
+function News({ data, setNewss }) {
   return (
     <div className="news-container">
       <div className="news-text text-4xl capitalize font-mono font-semibold ml-8  flex justify-center  tracking-widest">
@@ -16,19 +16,19 @@ function News({ newss, setNewss }) {
             />
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-left scrollbar-hide  ">
-              {newss[1].title}
+              {data[1].title}
             </p>
-            <div className="source   h-full  self-end">~{newss[1].source}</div>
+            <div className="source   h-full  self-end">~{data[1].source}</div>
           </div>
         </div>
         <div className="box2 bg-transparent"></div>
         <div className="box3 bg-transparent"></div>
         <div className="box1 col-span-2 h-full grow border-double border-4 border-sky-500 rounded-lg  shadow-lg shadow-indigo-500/50 ">
           <div className="flex  w-full items-center justify-center gap-2 h-full">
-            <div className="source">~{newss[0].source}</div>
+            <div className="source">~{data[0].source}</div>
 
             <p className="mt text-gray-500 capitalize dark:text-gray-300 items-center h-28   w-3/4 overflow-scroll text-right scrollbar-hide  ">
-              {newss[0].title}
+              {data[0].title}
             </p>
             <img
               className="object-cover rounded-xl  h-28 w-28"

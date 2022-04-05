@@ -27,7 +27,12 @@ function App() {
   const [reference, setReference] = useState([]);
   const [infoData, setInfoData] = useState([]);
 
-  const [newss, setNewss] = useState([]);
+  const [newss, setNewss] =
+    useState(`Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              repudiandae quae suscipit nobis deserunt cum, tempora aut rem
+              beatae cupiditate. Lorem, ipsum dolor sit amet consectetur
+              adipisicing elit. Dolorum repudiandae quae suscipit nobis deserunt
+              cum, tempora aut rem beatae cupiditate.`);
 
   useEffect(() => {
     // const asyncCall = async () => {
