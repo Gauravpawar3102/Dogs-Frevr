@@ -1,7 +1,5 @@
 // import React, { useEffect, useState } from 'react';
-// // import heroimg from '../assets/hero-img.jpg';
 // import Axios from 'axios';
-// // import herobgimg from '../assets/hero-wave-png.png';
 function Hero(props) {
   return (
     <div className="hero-breed ">
