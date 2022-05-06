@@ -41,9 +41,9 @@ function News({ data, setNewss }) {
 
       <Link
         to="/news"
-        className="news-more flex justify-end  w-full font-mono text-2xl text-emerald-400 underline"
+        className="news-more flex justify-end  w-full font-mono text-2xl text-emerald-500 underline"
       >
-        More...
+        More..
       </Link>
     </div>
   );
