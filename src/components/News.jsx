@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function News({ data, setNewss }) {
+function News({ data }) {
   return (
     <div className="news-container">
       <div className="news-text text-4xl capitalize font-mono font-semibold ml-8  flex justify-center  tracking-widest">
