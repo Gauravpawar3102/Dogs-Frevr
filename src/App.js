@@ -18,8 +18,8 @@ function App() {
   const [bName, setBName] = useState([]);
   const [bImg, setBImg] = useState([]);
   const [origin, setOrigin] = useState([]);
-  const [height, setHeight] = useState('Not Available 🦄');
-  const [weight, setWeight] = useState('Not Available  🦄');
+  const [height, setHeight] = useState('Not Available 🦄🦄');
+  const [weight, setWeight] = useState('Not Available  🦄🦄');
   const [coat, setCoat] = useState([]);
   const [random1, setrandom1] = useState([]);
   const [random2, setrandom2] = useState([]);
